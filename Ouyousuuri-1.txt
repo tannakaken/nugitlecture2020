@@ -1,0 +1,4 @@
+\documentclass[a4j]{jsarticle}
+\begin{document}
+hello,world.
+\end{document}
