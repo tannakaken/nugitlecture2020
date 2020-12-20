@@ -1,0 +1,32 @@
+\documentclass{jsarticle}
+\usepackage{amsmath,amssymb}
+\usepackage{cases}
+\usepackage{enumerate}
+
+\begin{document}
+\begin{center}
+	{\large 2020名古屋大学入試理系数学大問4}
+\end{center}
+\subsection*{問題}
+2名が先攻と後攻にわかれ、次のようなゲームを行う。
+\begin{enumerate}[(i)]
+	\item 正方形の4つの頂点を反時計回りにA,B,C,Dとする。
+				両者はコマを1つずつ持ち、ゲーム開始時には先攻の持ちゴマはA、後攻の持ちゴマはCにおいてあるとする。
+	\item 先攻から始めて、交互にサイコロを振る。
+				ただしサイコロは1から6までの目が等確率で出るものとする。
+				出た目を3で割ったあまりが0のときコマは動かさない。
+				また、余りが1のときは、自分のコマを反時計回りに隣りの頂点に動かす。
+				もし移動した先に相手のコマがあれば、その時点でゲームは終了とし、サイコロを振った者の勝ちとする。
+\end{enumerate}
+ちょうど$n$回サイコロが振られたときに勝敗が決まる確率を$p_n$とする。
+このとき、以下の問いに答えよ。
+\begin{enumerate}[(1)]
+	\item $p_2,p_3$を求めよ。
+	\item $p_n$を求めよ。
+	\item このゲームは後攻にとって有利であること、すなわち2以上の任意の整数$N$に対して、$\displaystyle \sum_{m=1}^{[\frac{N+1}{2}]}p_{2m-1}<\sum_{m=1}^{[\frac{N}{2}]}p_{2m}$が成り立つことを示せ。
+				ただし正の実数$a$に対し$[a]$はその整数部分（$k\leqq a<k+1$となる整数$k$）を表す。
+\end{enumerate}
+
+\subsection*{解答}
+
+\end{document}
