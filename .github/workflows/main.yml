@@ -1,0 +1,19 @@
+name: LaTeX to PDF
+
+on:
+  push:
+    branches: 
+      - master
+      - release/*
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v1
+      - name: Build docker image
+        uses: tannakaken/nugitlecture2020/.github/actions/latex@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
