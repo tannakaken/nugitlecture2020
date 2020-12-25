@@ -1,0 +1,83 @@
+\documentclass[a4j,12pt]{jarticle}
+\usepackage[hmargin={30mm,30mm},vmargin={30mm,30mm}]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsfonts} %必須
+\usepackage{amsmath} %必須
+\usepackage{amssymb} %必須
+\newcommand{\vto}[1]{\overrightarrow{#1}}
+\begin{document}
+\begin{center}
+\bf{\Large 2016年~名古屋大学~入試理系数学~(前期日程)~大問1~解答}
+\end{center}
+　曲線 $y=x^2$ 上に $2$ 点 A$(-2, 4),$ B$(b, b^2)$ をとる.
+ただし $b > -2$ とする.
+このとき, 次の条件を満たす $b$ の範囲を求めよ.\\
+条件:~$y=x^2$ 上の点 T$(t, t^2)~(-2<t<b)$ で$\angle$ ATBが直角になるものが存在する.\\
+\hrulefill
+\\
+(解答)~A$(-2, 4),$ B$(b, b^2),$ T$(t, t^2)~(-2<t<b)$ に対し,
+  \begin{align*}
+    \vto{\rm{AT}} &= (t+2, t^2-4) = (t+2)(1, t-2)\\
+    \vto{\rm{BT}} &= (t-b, t^2-b^2) = (t-b)(1, t+b)
+  \end{align*}
+  ここで与えられた条件から,
+  ある実数 $t$ に対し $\vto{\rm{AT}} \perp \vto{\rm{BT}}$ が成り立つ事から,
+  $\vto{\rm{AT}}$ と $\vto{\rm{BT}}$ の内積は $0$ となる.つまり
+  \begin{equation}
+    1 \cdot 1 + (t-2)(t+b) = t^2 + (b-2)t -2b+1 = 0
+  \end{equation}
+  が成り立つ.
+  ここで(1)を満たす $t$ が $-2<t<b$ の範囲に少なくとも $1$ つ存在する条件を求めればよい.
+  今 $t$ の関数 $f(t)$ として,
+  \begin{align*}
+   f(t) = t^2 + (b-2)t -2b+1 =\left( t + \frac{b-2}{2} \right)^2 - \frac{b^2+4b}{4}
+  \end{align*}
+  とおくと両端の値 $f(-2),f(b)$ はそれぞれ
+   \begin{align*}
+    f(-2) = -4b + 9,~
+    f(b) = 2b^2 -4b +1 = 2 \left( b - \frac{2-\sqrt{2}}{2} \right)\left( b - \frac{2+\sqrt{2}}{2} \right)
+  \end{align*}
+  となる.ここで $b$ の値の範囲で場合分けを行う.この時, $b>-2$ に注意する.
+  \begin{flushleft}
+    (i)~$f(-2) \geqq 0$ かつ $f(b) \geqq 0$,
+    つまり $-2 < b \leqq \frac{2-\sqrt{2}}{2}$
+    または $\frac{2+\sqrt{2}}{2} \leqq b \leqq \frac{9}{4}$のとき
+  \end{flushleft}
+  　~$y=f(t)$ のグラフについて,軸の位置と$y$軸との交点のそれぞれが 
+  \begin{align*}
+    -2 < - \frac{b-2}{2} < b,~
+    - \frac{b^2+4b}{4} \leqq 0
+  \end{align*}
+  　~であればよい.
+  ここでそれぞれの不等式を整理すれば,
+  \begin{align*}
+    \frac{2}{3} < b < 6 かつ( b \leqq -4 または 0 \leqq b)
+  \end{align*}
+  　~となるので
+   \begin{align*}
+    \frac{2}{3} < b < 6
+  \end{align*}
+     　~条件と合わせれば
+   \begin{align*}
+    \frac{2+\sqrt{2}}{2} \leqq b \leqq \frac{9}{4}
+  \end{align*}
+  \begin{flushleft} 
+     (ii)~($f(-2) \geqq 0$ かつ $f(b) < 0$)
+     または($f(-2) < 0$ かつ $f(b) \geqq 0$ )のとき.つまり\\
+     　 $\frac{2-\sqrt{2}}{2} < b < \frac{2+\sqrt{2}}{2}$
+     または$ b > \frac{9}{4}$ のとき
+  \end{flushleft}
+  　~$f(t)$は連続関数であり,$f(-2) \cdot f(b) \leqq 0$ より中間値の定理から$f(t) = 0$ を満たす
+   　~実数 $t$ が $-2<t<b$ の範囲に少なくとも $1$ つ存在する.
+  \begin{flushleft} 
+     (iii)~$f(-2) < 0$ かつ $f(b) < 0$ の時は
+     $\frac{2-\sqrt{2}}{2} < b < \frac{2+\sqrt{2}}{2}$
+     と$ b > \frac{9}{4}$ を同時に満たす $b$ は\\
+     　　存在しない.
+  \end{flushleft}
+  以上より求めるべき $b$ の値の範囲は(i)(ii)の範囲を合わせれば,
+  \begin{align*}
+    b > \frac{2-\sqrt{2}}{2}
+  \end{align*}
+  となる.
+\end{document}
