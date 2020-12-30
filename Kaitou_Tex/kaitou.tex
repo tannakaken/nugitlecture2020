@@ -6,95 +6,103 @@
 \usepackage{enumerate}
 \begin{document}
 \noindent
+{\bf 2018年 名古屋大学(理系)前期日程 大問1}
+
+\vspace{5mm}
 自然数$n$に対し，定積分$\displaystyle I_{n}=\int_{0}^{1} \frac{x^{n}}{x^{2}+1} d x$を考える。
 このとき，次の問いに答えよ。
 \begin{enumerate}[(1)]
  \item $\displaystyle I_{n}+I_{n+2}=\frac{1}{n+1}$ を示せ。
  \item $\displaystyle 0 \leqq I_{n+1} \leqq I_{n} \leqq \frac{1}{n+1}$ を示せ。
+ \vspace{2mm}
  \item $\displaystyle \lim _{n \rightarrow \infty} n I_{n}$ を求めよ。
  \item $\displaystyle S_{n}=\sum_{k=1}^{n} \frac{(-1)^{k-1}}{2 k}$とする。
  このとき，(1)，(2)を用いて$\displaystyle \lim _{n \rightarrow \infty} S_{n}$を求めよ。
 \end{enumerate}
 
-
+\vspace{20mm}
 \noindent
-(1)の解答
+{\bf (1)の解答}
 
-$I_{n}=\int_{0}^{1} \frac{x^{n}}{x^{2}+1} d x$より，$I_{n+2}=\int_{0}^{1} \frac{x^{n+2}}{x^{2}+1} d x$である。和をとると次のようになる。
+$\displaystyle I_{n}=\int_{0}^{1} \frac{x^{n}}{x^{2}+1} d x$より，$\displaystyle I_{n+2}=\int_{0}^{1} \frac{x^{n+2}}{x^{2}+1} d x$である。和をとると次のようになる。
 \[\begin{aligned}
-I_{n}+I_{n+2} &=\int_{0}^{1} \frac{x^{n}}{x^{2}+1} d x+\int_{0}^{1} \frac{x^{n+2}}{x^{2}+1} d x \\
-&=\int_{0}^{1} \frac{x^{n}\left(x^{2}+1\right)}{x^{2}+1} d x \\
-&=\int_{0}^{1} x^{n} d x.
+  I_{n}+I_{n+2} &=\int_{0}^{1} \frac{x^{n}}{x^{2}+1} d x+\int_{0}^{1} \frac{x^{n+2}}{x^{2}+1} d x \\
+  &=\int_{0}^{1} \frac{x^{n}\left(x^{2}+1\right)}{x^{2}+1} d x \\
+  &=\int_{0}^{1} x^{n} d x.
 \end{aligned}\]
 最後の積分を計算すると次のようになる。
 \[\int_{0}^{1} x^{n} d x=\left[\frac{1}{n+1} x^{n+1}\right]_{0}^{1}=\frac{1}{n+1}.\]
 よって
 \[I_{n}+I_{n+2}=\frac{1}{n+1}\]
 が成り立つ。
-\noindent
-(2)の解答
+\\
+\\
+{\bf (2)の解答}
 
-$I_n$の積分区間は$0\leq x\leq 1$である。この区間で$I_n$と$I_{n+1}$の被積分関数を比較すると
+$\displaystyle I_{n}=\int_{0}^{1} \frac{x^{n}}{x^{2}+1} d x$より，$\displaystyle I_{n+1}=\int_{0}^{1} \frac{x^{n+1}}{x^{2}+1} d x$である。$0\leq x\leq 1$において，$I_n$と$I_{n+1}$の被積分関数を比較すると
 \[\frac{x^{n+1}}{x^{2}+1} \leq \frac{x^{n}}{x^{2}+1}\]
 が成り立つ。また$0\leq x\leq 1$で$x^2+1>0$かつ$x^{n+1}\geq 0$であるから
 \[0 \leq \frac{x^{n+1}}{x^{2}+1} \leq \frac{x^{n}}{x^{2}+1}\]
-である。$0\leq x\leq 1$で積分することにより
+である。$x$について0から1の範囲で積分することにより
 \[0 \leq \int_{0}^{1} \frac{x^{n+1}}{x^{2}+1} d x \leq \int_{0}^{1} \frac{x^{n}}{x^{2}+1} d x\]
 が成り立つ。つまり，$0\leq I_{n+1}\leq I_{n}$である。
 
-次に$0\leq I_{n+1}\leq I_{n}$から，$0\leq I_{n+2}\leq I_{n+1}$であることがわかる。つまり$I_{n+2}\geq 0$かつ$I_{n}\geq 0$である。そして (1)より$I_{n}+I_{n+2}=\frac{1}{n+1}$であるから，左辺の2項が0以上であることを考慮すれば
+次に$0\leq I_{n+1}\leq I_{n}$から，$0\leq I_{n+2}\leq I_{n+1}$であることがわかる。つまり$I_{n+2}\geq 0$かつ$I_{n}\geq 0$である。そして (1)より$I_{n}+I_{n+2}=1/(n+1)$であるから，左辺の2項が0以上であることを考慮すれば
 \[I_{n} \leq \frac{1}{n+1}\]
 である。以上より
 \[0 \leq I_{n+1} \leq I_{n} \leq \frac{1}{n+1}\]
 が成り立つ。
-\noindent
-(3)の解答
+\\
+\\
+{\bf (3)の解答}
 
-(2)より$0 \leq I_{n+1} \leq I_{n} \leq \frac{1}{n+1}$が成り立つ。これより
-\[0 \leq I_{n+2} \leq I_{n+1} \leq I_{n} \leq I_{n-1} \leq I_{n-2}(ただしn\geq 3)\]
+(2)より$0 \leq I_{n+1} \leq I_{n} \leq 1/(n+1)$が成り立つ。これより
+\[0 \leq I_{n+2} \leq I_{n+1} \leq I_{n} \leq I_{n-1} \leq I_{n-2} \ (ただしn\geq 3)\]
 が成り立つ。
-まず$0 \leq I_{n+2} \leq I_{n+1} \leq I_{n}$から$I_{n+2}\leq I_{n}$である。$I_{n+2}\leq I_{n}$の両辺に$I_{n}$を足して$I_{n+2}+I_{n}\leq 2I_{n}$を得る。(1)より$I_{n}+I_{n+2}=\frac{1}{n+1}$であるから
+
+$0 \leq I_{n+2} \leq I_{n+1} \leq I_{n}$から$I_{n+2}\leq I_{n}$である。$I_{n+2}\leq I_{n}$の両辺に$I_{n}$を足して$I_{n+2}+I_{n}\leq 2I_{n}$を得る。(1)より$I_{n}+I_{n+2}=1/(n+1)$であるから
 \[\frac{1}{n+1} \leq 2 I_{n}\]
 となる。この不等式の両辺に$n$をかけ，2で割ると
 \[\frac{n}{2(n+1)} \leq I_{n}\]
 を得る。
-次に$I_{n} \leq I_{n-1} \leq I_{n-2}$から$I_{n}\leq I_{n-2}$である。$I_{n}\leq I_{n-2}$の両辺に$I_{n}$を足して$2I_{n}\leq I_{n-2}+I_{n}$を得る。(1)より$I_{n}+I_{n+2}=\frac{1}{n+1}$であるから
+次に$I_{n} \leq I_{n-1} \leq I_{n-2}$から$I_{n}\leq I_{n-2}$である。$I_{n}\leq I_{n-2}$の両辺に$I_{n}$を足して$2I_{n}\leq I_{n-2}+I_{n}$を得る。(1)より$I_{n}+I_{n+2}=1/(n+1)$であるから
 \[2 I_{n} \leq \frac{1}{n-1}\]
-となる。個の不等式の両辺に$n$をかけ，2で割ると
+となる。この不等式の両辺に$n$をかけ，2で割ると
 \[n I_{n} \leq \frac{n}{2(n-1)}\]
 を得る。
 以上より次の不等式が成り立つ。
 \[\frac{n}{2(n+1)} \leq n I_{n} \leq \frac{n}{2(n-1)}.\]
 さらに
-\[\begin{array}{l}
-\lim _{n \rightarrow \infty} \frac{n}{2(n+1)}=\lim _{n \rightarrow \infty} \frac{1}{2\left(1+\frac{1}{n}\right)}=\frac{1}{2} \\
-\lim _{n \rightarrow \infty} \frac{n}{2(n-1)}=\lim _{n \rightarrow \infty} \frac{1}{2\left(1-\frac{1}{n}\right)}=\frac{1}{2}
-\end{array}\]
+\[\begin{aligned}
+  \lim _{n \rightarrow \infty} \frac{n}{2(n+1)} &=\lim _{n \rightarrow \infty} \frac{1}{2\left(1+\frac{1}{n}\right)}=\frac{1}{2} \\
+  \lim _{n \rightarrow \infty} \frac{n}{2(n-1)} &=\lim _{n \rightarrow \infty} \frac{1}{2\left(1-\frac{1}{n}\right)}=\frac{1}{2}
+\end{aligned}\]
 であるから，はさみうちの原理より
 \[\lim _{n \rightarrow \infty} n I_{n}=\frac{1}{2}\]
 である。
-\noindent
-(4)の解答
+\\
+\\
+{\bf (4)の解答}
 
-(1)より$I_{n}+I_{n+2}=\frac{1}{n+1}$であるから
+(1)より$I_{n}+I_{n+2}=1/(n+1)$であるから
 \[I_{2k-1}+I_{2k+1}=\frac{1}{2k}\]
 が成り立つ。両辺に$(-1)^{k-1}$をかけて
 \[(-1)^{k-1}\left(I_{2 k-1}+I_{2 k+1}\right)=\frac{(-1)^{k-1}}{2 k}\]
 を得る。これより$S_{n}$は次のようになる。
 \[\begin{aligned}
-S_{n}=\sum_{k=1}^{n} \frac{(-1)^{k-1}}{2 k} &=\sum_{k=1}^{n}(-1)^{k-1}\left(I_{2 k-1}+I_{2 k+1}\right) \\
-&=\left(I_{1}+I_{3}\right)-\left(I_{3}+I_{5}\right)+\cdots+(-1)^{n-2}\left(I_{2 n-3}+I_{2 n-1}\right)+(-1)^{n-1}\left(I_{2 n-1}+I_{2 n+1}\right) \\
-&=I_{1}+(-1)^{n-1} I_{2 n+1}.
+  S_{n}=\sum_{k=1}^{n} \frac{(-1)^{k-1}}{2 k} &=\sum_{k=1}^{n}(-1)^{k-1}\left(I_{2 k-1}+I_{2 k+1}\right) \\
+  &=\left(I_{1}+I_{3}\right)-\left(I_{3}+I_{5}\right)+\cdots+(-1)^{n-2}\left(I_{2 n-3}+I_{2 n-1}\right)+(-1)^{n-1}\left(I_{2 n-1}+I_{2 n+1}\right) \\
+  &=I_{1}+(-1)^{n-1} I_{2 n+1}.
 \end{aligned}\]
 $I_{1}$の値は
 \[\begin{aligned}
-I_{1} &=\int_{0}^{1} \frac{x}{x^{2}+1} d x \\
-&=\left[\frac{1}{2} \log \left(x^{2}+1\right)\right]_{0}^{1} \\
-&=\frac{1}{2} \log 2
+  I_{1} &=\int_{0}^{1} \frac{x}{x^{2}+1} d x \\
+  &=\left[\frac{1}{2} \log \left(x^{2}+1\right)\right]_{0}^{1} \\
+  &=\frac{1}{2} \log 2
 \end{aligned}\]
 である。これより$\displaystyle \lim _{n \rightarrow \infty} S_{n}$は
 \[\lim _{n \rightarrow \infty} S_{n}=\frac{1}{2} \log 2+\lim _{n \rightarrow \infty}(-1)^{n-1} I_{2 n+1}\]
-である。右辺の極限を求める。$0 \leq I_{n+1} \leq I_{n} \leq \frac{1}{n+1}$より$0 \leq I_{n} \leq \frac{1}{n+1}$である。$\lim _{n \rightarrow \infty} \frac{1}{n+1}=0$であるから，はさみうちの原理より$\displaystyle \lim _{n \rightarrow \infty} I_{n}=0$となる。よって
+である。右辺の極限を求める。$0 \leq I_{n+1} \leq I_{n} \leq 1/(n+1)$より$0 \leq I_{n} \leq 1/(n+1)$である。$\displaystyle \lim _{n \rightarrow \infty} \frac{1}{n+1}=0$であるから，はさみうちの原理より$\displaystyle \lim _{n \rightarrow \infty} I_{n}=0$となる。よって
 \[\lim _{n \rightarrow \infty}(-1)^{n-1} I_{2 n+1}=0\]
 である。以上より
 \[\lim _{n \rightarrow \infty} S_{n}=\frac{1}{2} \log 2\]
