@@ -1,9 +1,5 @@
-\documentclass[11pt,a4paper]{jsarticle}
-\usepackage{amsmath,amssymb}
-\usepackage{bm}
-\usepackage{graphicx}
-\usepackage{ascmac}
-\usepackage{enumerate}
+\documentclass[../main]{subfiles}
+
 \begin{document}
 \noindent
 {\bf 2018年 名古屋大学(理系)前期日程 大問1}
@@ -63,7 +59,7 @@ $\displaystyle I_{n}=\int_{0}^{1} \frac{x^{n}}{x^{2}+1} d x$より，$\displayst
 $0 \leq I_{n+2} \leq I_{n+1} \leq I_{n}$から$I_{n+2}\leq I_{n}$である。$I_{n+2}\leq I_{n}$の両辺に$I_{n}$を足して$I_{n+2}+I_{n}\leq 2I_{n}$を得る。(1)より$I_{n}+I_{n+2}=1/(n+1)$であるから
 \[\frac{1}{n+1} \leq 2 I_{n}\]
 となる。この不等式の両辺に$n$をかけ，2で割ると
-\[\frac{n}{2(n+1)} \leq I_{n}\]
+\[\frac{n}{2(n+1)} \leq n I_{n}\]
 を得る。
 次に$I_{n} \leq I_{n-1} \leq I_{n-2}$から$I_{n}\leq I_{n-2}$である。$I_{n}\leq I_{n-2}$の両辺に$I_{n}$を足して$2I_{n}\leq I_{n-2}+I_{n}$を得る。(1)より$I_{n}+I_{n+2}=1/(n+1)$であるから
 \[2 I_{n} \leq \frac{1}{n-1}\]
