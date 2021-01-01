@@ -1,0 +1,92 @@
+﻿\documentclass[a4paper,12pt]{jarticle}
+\usepackage[hmargin={20mm,20mm},vmargin={20mm,20mm}]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsfonts} %必須
+\usepackage{amsmath} %必須
+\usepackage{amssymb} %必須
+\newcommand{\e}{\varepsilon}
+\newcommand{\longra}{\longrightarrow}
+\newcommand{\bl}{\biggl}
+\newcommand{\br}{\biggr}
+\newcommand{\nin}{\noindent}
+\newcommand{\parnin}{\par\noindent}
+\newcommand{\parr}{\par\ }
+\begin{document}
+\begin{center}
+\bf{\LARGE 2020年度(2次募集, 午後)第3問}
+\end{center}
+\nin
+(1)
+  \begin{align*}
+    \bl|\int_{\Gamma_R}\frac{e^{3iz}-3e^{iz}+2}{z^3}\,dz\br|
+    &=\bl|\int_0^\pi 
+    \frac{e^{3iRe^{i\theta}}-3e^{iRe^{i\theta}}+2}
+    {(Re^{i\theta})^3}(iRe^{i\theta})\,d\theta\br| \\
+    &\leq\int_0^\pi
+    i\frac{e^{-3R\sin\theta}+3e^{-R\sin\theta}+2}{R^2}
+    \,d\theta \\
+    &\longra 0 \quad (R\to \infty).
+  \end{align*}
+  従って, 
+  \begin{align*}
+    \lim_{R\to+\infty}\int_{\Gamma_R}
+    \frac{e^{3iz}-3e^{iz}+2}{z^3}\,dz=0.
+  \end{align*}
+\parr
+\parnin
+(2)
+  \begin{align*}
+    e^{3iz}-3e^{iz}+2
+    &=\bl(1+3iz-\frac{9z^2}{2}-\frac{27iz^3}{6}+\cdots\br)
+    -3\bl(1+iz-\frac{z^2}{2}-\frac{iz^3}{6}+\cdots\br)+2 \\
+    &=-3z^2-4iz^3+\cdots
+  \end{align*}
+  となるので, $z=0$の近傍で有界な関数$E(z)$を用いて
+  \begin{align*}
+    \frac{e^{3iz}-3e^{iz}+2}{z^3}
+    &=-\frac{3}{z}+E(z)
+  \end{align*}
+  とできる.
+  よって, 
+  \begin{align*}
+    \int_{C_\e}\frac{e^{3iz}-3e^{iz}+2}{z^3}\,dz
+    &=\int_\pi^0 
+    \bl(-\frac{3}{\e e^{i\theta}}+E(\e e^{i\theta})\br)
+    (i\e e^{i\theta})\,d\theta.
+  \end{align*}
+  ここで, $M>0$を用いて$z=0$の近傍で$E(z)\leq M$とすれば,
+  \begin{align*}
+    \bl|\int_\pi^0 i\e e^{i\theta}E(\e e^{i\theta})\,d\theta\br|
+    &\leq \e\int_\pi^0 M\,d\theta
+    =-\e M\pi
+    \longra 0 \quad (\e\to 0)
+  \end{align*}
+  となるので, 
+  \begin{align*}
+    \lim_{\e\to 0}\int_{C_\e}\frac{e^{3iz}-3e^{iz}+2}{z^3}\,dz
+    &=\int_\pi^0 -3i\,d\theta
+    =3\pi i.
+  \end{align*}
+\parr
+\parnin
+(3)
+  まず, Cauchyの積分定理と(1),(2)より
+  \begin{align*}
+    \lim_{R\to+\infty, \e\to 0}
+    \bl(\int_\e^R f(x)\,dx+\int_{-R}^{-\e}f(x)\,dx\br)
+    =-3\pi i.
+  \end{align*}
+  さらに, 
+  \begin{align*}
+    \int_\e^R f(x)\,dx+\int_{-R}^{-\e}f(x)\,dx
+    &=\int_\e^R \frac{e^{3ix}-3e^{ix}+2}{x^3}\,dx
+    +\int_{R}^{\e}\frac{e^{-3ix}-3e^{-ix}+2}{(-x)^3}\,dx \\
+    &=\int_\e^R \frac{2i(\sin 3x-3\sin x}{x^3}\,dx \\
+    &=-8i\int_\e^R \frac{\sin^3 x}{x^3}\,dx.
+  \end{align*}
+  以上より, 
+  \begin{align*}
+    \int_0^\infty \frac{\sin^3 x}{x^3}\,dx
+    &=\frac{3}{8}\pi.
+  \end{align*}
+\end{document}

@@ -1,0 +1,80 @@
+﻿\documentclass[../main]{subfiles}
+\begin{document}
+\begin{center}
+\bf{\LARGE 2020年度(2次募集, 午後)第3問}
+\end{center}
+\noindent
+(1)
+  \begin{align*}
+    \biggl|\int_{\Gamma_R}\frac{e^{3iz}-3e^{iz}+2}{z^3}\,dz\biggr|
+    &=\biggl|\int_0^\pi 
+    \frac{e^{3iRe^{i\theta}}-3e^{iRe^{i\theta}}+2}
+    {(Re^{i\theta})^3}(iRe^{i\theta})\,d\theta\biggr| \\
+    &\leq\int_0^\pi
+    i\frac{e^{-3R\sin\theta}+3e^{-R\sin\theta}+2}{R^2}
+    \,d\theta \\
+    &\longrightarrow 0 \quad (R\to \infty).
+  \end{align*}
+  従って, 
+  \begin{align*}
+    \lim_{R\to+\infty}\int_{\Gamma_R}
+    \frac{e^{3iz}-3e^{iz}+2}{z^3}\,dz=0.
+  \end{align*}
+\par\ 
+\par\noindent
+(2)
+  \begin{align*}
+    e^{3iz}-3e^{iz}+2
+    &=\biggl(1+3iz-\frac{9z^2}{2}-\frac{27iz^3}{6}+\cdots\biggr)
+    -3\biggl(1+iz-\frac{z^2}{2}-\frac{iz^3}{6}+\cdots\biggr)+2 \\
+    &=-3z^2-4iz^3+\cdots
+  \end{align*}
+  となるので, $z=0$の近傍で有界な関数$E(z)$を用いて
+  \begin{align*}
+    \frac{e^{3iz}-3e^{iz}+2}{z^3}
+    &=-\frac{3}{z}+E(z)
+  \end{align*}
+  とできる.
+  よって, 
+  \begin{align*}
+    \int_{C_\varepsilon}\frac{e^{3iz}-3e^{iz}+2}{z^3}\,dz
+    &=\int_\pi^0 
+    \biggl(-\frac{3}{\varepsilon e^{i\theta}}+E(\varepsilon e^{i\theta})\biggr)
+    (i\varepsilon e^{i\theta})\,d\theta.
+  \end{align*}
+  ここで, $M>0$を用いて$z=0$の近傍で$E(z)\leq M$とすれば,
+  \begin{align*}
+    \biggl|\int_\pi^0 i\varepsilon e^{i\theta}E(\varepsilon e^{i\theta})\,d\theta\biggr|
+    &\leq \varepsilon\int_\pi^0 M\,d\theta
+    =-\varepsilon M\pi
+    \longrightarrow 0 \quad (\varepsilon\to 0)
+  \end{align*}
+  となるので, 
+  \begin{align*}
+    \lim_{\varepsilon\to 0}\int_{C_\varepsilon}\frac{e^{3iz}-3e^{iz}+2}{z^3}\,dz
+    &=\int_\pi^0 -3i\,d\theta
+    =3\pi i.
+  \end{align*}
+\par\ 
+\par\noindent
+(3)
+  まず, Cauchyの積分定理と(1),(2)より
+  \begin{align*}
+    \lim_{R\to+\infty, \varepsilon\to 0}
+    \biggl(\int_\varepsilon^R f(x)\,dx+\int_{-R}^{-\varepsilon}f(x)\,dx\biggr)
+    =-3\pi i.
+  \end{align*}
+  さらに, 
+  \begin{align*}
+    \int_\varepsilon^R f(x)\,dx+\int_{-R}^{-\varepsilon}f(x)\,dx
+    &=\int_\varepsilon^R \frac{e^{3ix}-3e^{ix}+2}{x^3}\,dx
+    +\int_{R}^{\varepsilon}\frac{e^{-3ix}-3e^{-ix}+2}{(-x)^3}\,dx \\
+    &=\int_\varepsilon^R \frac{2i(\sin 3x-3\sin x}{x^3}\,dx \\
+    &=-8i\int_\varepsilon^R \frac{\sin^3 x}{x^3}\,dx.
+  \end{align*}
+  以上より, 
+  \begin{align*}
+    \int_0^\infty \frac{\sin^3 x}{x^3}\,dx
+    &=\frac{3}{8}\pi.
+  \end{align*}
+\end{document}
