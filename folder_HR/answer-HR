@@ -1,6 +1,4 @@
-\documentclass[a4paper,12pt]{jsarticle}
-\usepackage{amsmath,amssymb}
-
+\documentclass[../main]{subfiles}
 
 \begin{document}
  \title{ 2010年名古屋大学入試理系数学（前期日程）大問4}
