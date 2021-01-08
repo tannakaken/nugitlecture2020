@@ -1,0 +1,62 @@
+\documentclass[../main]{subfiles}
+
+\begin{document}
+ \title{ 2010年名古屋大学入試理系数学（前期日程）大問4}
+ \author{}
+ \date{}
+ \maketitle
+
+  (1)
+  $ y = \frac{1}{3}x^{2}+ \frac{1}{2}x$
+  のグラフ上に無限個の格子点が存在する 
+  ことを示せ.\\
+  
+  解）mを任意の整数とし$x=6m$とおく.\\
+  xを与えられた式に代入すると\\
+   \begin{equation*}   
+    y &= \frac{1}{3}\times36m^{2}+\frac{1}{2}\times6m
+    &= 3m(4m+1)
+   \end{equation*}
+  よって$(6m,3m(4m+1))$は格子点.\\
+  したがって整数mは無限個存在するため,格子点は無限個存在する.\\
+
+  (2)a,bは実数でa\ne0とする.$y=ax^{2}+bx$のグラフ上に点$(0,0)$以外
+  に格子点が2つ存在すれば、無限個存在することを示せ.\\
+
+  解）2点(p,q),(r,s)を格子点とする.それぞれ与えられた式に代入すると,\\
+   \begin{cases}
+    q&=ap^{2}+bp\mbox{…(あ)}\\
+    s&=ar^{2}+br\mbox{…(い)}
+   \end{cases}
+
+  $（あ）\times r-(い)\times p $より
+   \begin{equation*}
+    qr-ps=a(p^{2}r-pr^{2})
+   \end{equation}
+  よって
+   \begin{equation*}
+    a=\frac{-(ps-qr)}{pr(p-r)}
+   \end{equation}
+  同様に
+  $（あ）\times r^{2}-(い)\times p^{2} $より
+   \begin{equation*}
+    qr^{2}-p^{2}s=b(r^{2}p-rp^{2})
+   \end{equation*}
+  よって
+   \begin{equation*}
+    b=\frac{-(p^{2}s-qr^{2})}{pr(p-r)}
+   \end{equation*}
+  したがって最初に与えられた式は、
+   \begin{equation*}
+    y=\frac{-(ps-qr)}{pr(p-r)}x^{2}+\frac{-(p^{2}s-qr^{2})}{pr(p-r)}x
+   \end{equation*}
+  とかける.
+  ここで（1）と同様に、nを任意の整数とし$x=pr(p-r)n$とおく.\\
+  xを代入すると,
+   \begin{equation*}
+    y=-(ps-qr)pr(p-r)n^{2}+(p^{2}s-qr{2})n
+   \end{equation*}
+  よって$(pr(p-r)n,-(ps-qr)pr(p-r)n^{2}+(p^{2}s-qr{2})n)$は格子点.\\
+  したがって整数nは無限個存在するため,格子点は無限個存在する.\\
+     
+\end{document}
