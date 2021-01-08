@@ -1,0 +1,135 @@
+\documentclass[../main]{subfiles}
+
+
+\begin{document}
+\begin{center}
+	{\large 2020名古屋大学入試理系数学大問4}
+\end{center}
+\begin{flushright}
+  322001115~~児玉悠太
+\end{flushright}
+\subsection*{問題}
+2名が先攻と後攻にわかれ，次のようなゲームを行う．
+\begin{enumerate}[(i)]
+	\item 正方形の4つの頂点を反時計回りにA,B,C,Dとする．
+				両者はコマを1つずつ持ち，ゲーム開始時には先攻の持ちゴマはA，後攻の持ちゴマはCにおいてあるとする．
+	\item 先攻から始めて，交互にサイコロを振る．
+				ただしサイコロは1から6までの目が等確率で出るものとする．
+				出た目を3で割ったあまりが0のときコマは動かさない．
+				また，余りが1のときは，自分のコマを反時計回りに隣りの頂点に動かし，余りが2のときは，自分のコマを時計回りに隣りの頂点に動かす．
+				もし移動した先に相手のコマがあれば，その時点でゲームは終了とし，サイコロを振った者の勝ちとする．
+\end{enumerate}
+ちょうど$n$回サイコロが振られたときに勝敗が決まる確率を$p_n$とする．
+このとき，以下の問いに答えよ．
+\begin{enumerate}[(1)]
+	\item $p_2,p_3$を求めよ．
+	\item $p_n$を求めよ．
+	\item このゲームは後攻にとって有利であること，すなわち2以上の任意の整数$N$に対して，$\displaystyle \sum_{m=1}^{[\frac{N+1}{2}]}p_{2m-1}<\sum_{m=1}^{[\frac{N}{2}]}p_{2m}$が成り立つことを示せ．
+				ただし正の実数$a$に対し$[a]$はその整数部分（$k\leqq a<k+1$となる整数$k$）を表す．
+\end{enumerate}
+
+\subsection*{解答}
+\begin{enumerate}[(1)]
+\item ルール(ii)よりサイコロを振って，3,6が出たときコマは移動せず，1,4が出たときコマは反時計回り隣りの頂点に移動し，2,5が出たときコマは時計回りに隣りの頂点に移動する．
+従って，サイコロを振ってコマが「移動しない」，「反時計回り隣りの頂点に移動する」，「時計回り隣りの頂点に移動する」確率はすべて1/3ずつである．
+				
+			ここで2回サイコロが振られて勝敗が決まるのは，「1回目で先攻のコマがAからBへ移動し，2回目で後攻のコマがCからBへ移動する」か「1回目で先攻のコマがAからDへ移動し，2回目で後攻のコマがCからDへ移動する」かのどちらかであるから，サイコロを2回振って勝敗が決まる確率$p_2$は，
+			\[
+				p_2=2\cdot \left(\frac{1}{3}\right)^2=\frac{2}{9}
+			\]
+				
+			一方3回サイコロが振られて勝敗が決まるのは，「1回目で先攻のコマがAから動かず，2回目で後攻のコマがCからBへ移動し，3回目で先攻のコマがAからBへ移動する」か「1回目で先攻のコマがAから動かず，2回目で後攻のコマがCからDへ移動し，3回目で先攻のコマがAからDへ移動する」か「1回目で先攻のコマがAからBへ移動し，2回目で後攻のコマがCから動かず，3回目で先攻のコマがCからBへ移動する」か「1回目で先攻のコマがAからDへ移動し，2回目で後攻のコマがCから動かず，3回目で先攻のコマがCからDへ移動する」かの4つのうちのどれかであるから，サイコロを3回振って勝敗が決まる確率$p_3$は，
+			\[
+				p_3=4\cdot \left(\frac{1}{3}\right)^3=\frac{4}{27}
+			\]
+
+\item ちょうど$n$回サイコロが振られたときにコマが隣り合う確率を$q_n$，コマが隣り合わない且つ勝敗も決まらない確率を$r_n$とする．
+			このとき，$p_0=r_0=0,q_0=1$と漸化式
+			\begin{numcases}
+  			{}
+ 				\label{p=r/3}
+				p_{n+1}=\frac{1}{3}r_n & \\
+				\label{q=q/3+r/3}
+				q_{n+1}=\frac{1}{3}q_n+\frac{1}{3}r_n & \\
+				\label{r=2q/3+r/3}
+				r_{n+1}=\frac{2}{3}q_n+\frac{1}{3}r_n &
+			\end{numcases}
+			が成り立つ．
+			
+			式(\ref{r=2q/3+r/3})より，$q_n=(3r_{n+1}-r_n)/2$であり，これを式(\ref{q=q/3+r/3})に代入，整理すると，
+			\begin{equation}
+				\label{r=2r/3+r/9}
+				r_{n+2}=\frac{2}{3}r_{n+1}+\frac{1}{9}r_n
+			\end{equation}
+			ここで式(\ref{r=2r/3+r/9})の特性方程式$t^2=\cfrac{2}{3}t+\cfrac{1}{9}$の解$t=\cfrac{1\pm \sqrt{2}}{3}$について，$\alpha=\cfrac{1-\sqrt{2}}{3},\beta=\cfrac{1+\sqrt{2}}{3}$とおくと，式(\ref{r=2r/3+r/9})は，
+			\[
+				r_{n+2}-\alpha r_{n+1}=\beta (r_{n+1}-\alpha r_n),
+				r_{n+2}-\beta r_{n+1}=\alpha (r_{n+1}-\beta r_n)
+			\]
+			と2つの形に書き換えられる．
+			式(\ref{p=r/3})より，$r_1=3p_2=2/3$であるから，数列$\{r_{n+1}-\alpha r_n\}_{n=0}^{\infty}$は初項$r_1-\alpha r_0=2/3$，公比$\beta$の等比数列，数列$\{r_{n+1}-\beta r_n\}_{n=0}^{\infty}$は初項$r_1-\beta r_0=2/3$，公比$\alpha$の等比数列であるから，
+			\[
+				r_{n+1}-\alpha r_n=\frac{2}{3}\beta^n,
+				r_{n+1}-\beta r_n=\frac{2}{3}\alpha^n
+			\]
+			辺々引いて，$(-\alpha+\beta)r_n=2(\beta^n-\alpha^n)/3$であり，$-\alpha+\beta=-(1-\sqrt{2})/3+(1+\sqrt{2})/3=2\sqrt{2}/3$であるから，
+			\[
+				r_n=\frac{3}{2\sqrt{2}}\frac{2(\beta^n-\alpha^n)}{3}=\frac{\sqrt{2}}{2}(\beta^n-\alpha^n)
+			\]
+			よって式(\ref{p=r/3})から$n\geqq1$において
+			\[
+				p_n=\frac{1}{3}r_{n-1}
+				=\frac{\sqrt{2}}{6}(\beta^{n-1}-\alpha^{n-1})
+				=\frac{\sqrt{2}}{6}\left(\left(\frac{1+\sqrt{2}}{3}\right)^{n-1}-\left(\frac{1-\sqrt{2}}{3}\right)^{n-1}\right)
+			\]
+			以上より，求める解は
+			\begin{equation}
+				\label{p=0,sqrt2/6etc.}
+			  p_n = \begin{cases}
+			    0 & (n=0) \\
+			    \cfrac{\sqrt{2}}{6}\left(\left(\cfrac{1+\sqrt{2}}{3}\right)^{n-1}-\left(\cfrac{1-\sqrt{2}}{3}\right)^{n-1}\right) & (n=1,2,\dots)
+			  \end{cases}
+			\end{equation}
+\item 任意の自然数$n$に対し，(\ref{p=0,sqrt2/6etc.})より，
+			\begin{eqnarray*}
+				p_{2n}-p_{2n+1}&=&\frac{\sqrt{2}}{6}(\beta^{2n-1}-\alpha^{2n-1})-\frac{\sqrt{2}}{6}(\beta^{2n}-\alpha^{2n})\\
+				&=&\frac{\sqrt{2}}{6}(\beta^{2n-1}(1-\beta)-\alpha^{2n-1}(1-\alpha))\\
+				&=&\frac{\sqrt{2}}{6}\left(\frac{2-\sqrt{2}}{3}\beta^{2n-1}-\frac{2+\sqrt{2}}{3}\alpha^{2n-1}\right)
+			\end{eqnarray*}
+			ここで$\alpha<0<\beta$より，$(2-\sqrt{2})\beta^{2n-1}/3,-(2+\sqrt{2})\alpha^{2n-1}/3>0$であるから，$p_{2n}-p_{2n+1}>0$，すなわち$p_{2n+1}<p_{2n}$が成り立つ．
+			
+			ここで，$k$を2以上の自然数とし，$N$について(i)$N=2$のとき，(ii)$N=2k$のとき，(iii)$N=2k-1$のとき，の3つに場合分けし$\displaystyle \sum_{m=1}^{[\frac{N+1}{2}]}p_{2m-1}<\sum_{m=1}^{[\frac{N}{2}]}p_{2m}\cdots (\ast)$が成り立つことを示す．
+			\begin{enumerate}[(i)]
+				\item $N=2$のとき
+							
+							$0=p_1<p_2=2/9$より，$(\ast)$が成り立つことは明らか．
+				\item $N=2k$のとき
+				
+							$p_1=0$より，$\displaystyle \sum_{m=1}^{[\frac{N+1}{2}]}p_{2m-1}=\sum_{m=1}^kp_{2m-1}=\sum_{m=2}^kp_{2m-1}$．
+							また，$\sum_{m=1}^{[\frac{N}{2}]}p_{2m}=\sum_{m=1}^kp_{2m}$であるから，
+							\[
+								\sum_{m=1}^{[\frac{N+1}{2}]}p_{2m-1}
+								=\sum_{m=2}^kp_{2m-1}
+								<\sum_{m=1}^{k-1}p_{2m}
+								<\sum_{m=1}^kp_{2m}
+								=\sum_{m=1}^{[\frac{N}{2}]}p_{2m}
+							\]
+							よって$(\ast)$は成り立つ．
+				\item $N=2k-1$のとき
+							
+							$p_1=0$より，$\displaystyle \sum_{m=1}^{[\frac{N+1}{2}]}p_{2m-1}=\sum_{m=1}^{k+1}p_{2m-1}=\sum_{m=2}^{k+1}p_{2m-1}$．
+							また，$\sum_{m=1}^{[\frac{N}{2}]}p_{2m}=\sum_{m=1}^kp_{2m}$であるから，
+							\[
+								\sum_{m=1}^{[\frac{N+1}{2}]}p_{2m-1}
+								=\sum_{m=2}^{k+1}p_{2m-1}
+								<\sum_{m=1}^kp_{2m}
+								=\sum_{m=1}^{[\frac{N}{2}]}p_{2m}
+							\]
+							よって$(\ast)$は成り立つ．
+			\end{enumerate}
+			以上(i)(ii)(iii)より，2以上の任意の整数$N$に対して，$\displaystyle \sum_{m=1}^{[\frac{N+1}{2}]}p_{2m-1}<\sum_{m=1}^{[\frac{N}{2}]}p_{2m}$が成り立つことが示された．
+			
+\end{enumerate}
+
+
+\end{document}
