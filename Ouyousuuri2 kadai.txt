@@ -1,0 +1,9 @@
+\documentclass[a4j]{jarticle}
+\usepackage[a4paper,dvipdfm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\begin{document}
+\title{2016年度名大理系数学第4問}
+\author{(作成　吉原爽太)}
+\date{}
+\maketitle
+\end{document}
