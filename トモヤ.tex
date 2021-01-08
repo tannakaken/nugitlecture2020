@@ -1,13 +1,7 @@
-\documentclass[a4j,12pt]{jarticle}
-\usepackage[hmargin={30mm,30mm},vmargin={30mm,30mm}]{geometry}
-\usepackage[dvipdfmx]{graphicx}
-\usepackage{amsfonts} %必須
-\usepackage{amsmath} %必須
-\usepackage{amssymb} %必須
-\newcommand{\vto}[1]{\overrightarrow{#1}}
+\documentclass[../main]{subfiles}
 \begin{document}
 \begin{center}
-\bf{\Large 2016年~名古屋大学~入試理系数学~(前期日程)~大問1~解答}
+\bf{\Large 2016年~名古屋大学~入試理系数学~(前期日程)~大問1}
 \end{center}
 　曲線 $y=x^2$ 上に $2$ 点 A$(-2, 4),$ B$(b, b^2)$ をとる.
 ただし $b > -2$ とする.
@@ -17,12 +11,12 @@
 \\
 (解答)~A$(-2, 4),$ B$(b, b^2),$ T$(t, t^2)~(-2<t<b)$ に対し,
   \begin{align*}
-    \vto{\rm{AT}} &= (t+2, t^2-4) = (t+2)(1, t-2)\\
-    \vto{\rm{BT}} &= (t-b, t^2-b^2) = (t-b)(1, t+b)
+    \overrightarrow{\rm{AT}} &= (t+2, t^2-4) = (t+2)(1, t-2)\\
+    \overrightarrow{\rm{BT}} &= (t-b, t^2-b^2) = (t-b)(1, t+b)
   \end{align*}
   ここで与えられた条件から,
-  ある実数 $t$ に対し $\vto{\rm{AT}} \perp \vto{\rm{BT}}$ が成り立つ事から,
-  $\vto{\rm{AT}}$ と $\vto{\rm{BT}}$ の内積は $0$ となる.つまり
+  ある実数 $t$ に対し $\overrightarrow{\rm{AT}} \perp \overrightarrow{\rm{BT}}$ が成り立つ事から,
+  $\overrightarrow{\rm{AT}}$ と $\overrightarrow{\rm{BT}}$ の内積は $0$ となる.つまり
   \begin{equation}
     1 \cdot 1 + (t-2)(t+b) = t^2 + (b-2)t -2b+1 = 0
   \end{equation}
