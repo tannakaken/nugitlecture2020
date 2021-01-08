@@ -1,0 +1,36 @@
+\documentclass[a4,14pt,titlepage]{jarticle}
+
+\usepackage[dvipdfm,margin={20mm,25mm}]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\theoremstyle{definition}
+\newtheorem*{definition*}{定義}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{corollary}[theorem]{系}
+\renewcommand\proofname{証明}
+
+\begin{document}
+  \title{名古屋大学大学院前期入学試験2010年午後問１（1）と（2）}
+　\author{韓長睿}
+  \date{}
+  \maketitle
+  
+  \section{問題}
+    V,Wを$\mathbb{C}$上の有限次元線形空間とし、$f:V\rightarrow W$は線形写像とする、以下の問に答えよ
+    \par
+    （1）$f$が全射の時、ある線形写像$g:W\rightarrow V$が存在して、$g$と$f$の合成写像$fg$が$W$の恒等写像となることを示せ
+    \par
+    （2）$f$が単射の時、ある線形写像$g:W\rightarrow V$が存在して、$gf$が$W$の恒等写像となることを示せ
+  
+  \section{解答}
+    (1)
+    \par
+    ${w_1,w_2,...,w_m}$をWの基底とすると、各$j=1,2,...,m$に対して、$f^{-1}[(w_j)_]\ne \Phi$。そして、各$j$に対して、$v_j \in f^{-1}[w_j]$を一つずつとり、$g:W\rightarrow V$を$g[(w_j)_]=v_j$により定める。このとき、各$j=1,2,...,m$に対して、$(f\circ g)[(w_j)_]=f(v_j)=w_j$より、$f\circ g=id_w$ 
+
+    \par
+    (2)
+    \par
+  ${v_1,v_2,...,v_n}$をVの基底とすると、$w_j=f(v_j)$とおくと、このとき、${w_1,w_2,...,w_n}$は線形独立。実際、$Sum[(c_j)(w_i),{1,n}]=0$ $((c_j)\in \mathbb{C})$ならば、$f[Sum[(c_j)(w_j),{1,n}]_]=Sum[(c_j)(w_j),{1,n}]=0$より、$Sum[(c_j)(v_j),{1,n}]=0$。${v_1,v_2,...,v_n}$ は線形独立より、$c_1=c_2=...=c_n=0$。今、基底の拡張定理より、$(w_(n+1),...,w_m)\in W$で、${w_1,w_2,...,w_m}$がＷの基底となるものが存在する。このとき、$g:W\rightarrow V$を$g[(w_j)_]=Piecewise[{v_j,1<=j<=m},{0,(n+1)<=j<=m}]$により定める。すると、$(g\circ f)[(v_j)_]=g(w_j)=v_j$より、$g\circ f=id_v$
+  \end{document}
