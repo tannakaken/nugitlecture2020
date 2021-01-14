@@ -1,0 +1,21 @@
+\documentclass[../main]{subfiles}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+\textbf{接触形式$${\alpha _1} = dy - mdx$$のReeb Fieldを求めよ。}
+\\\\
+\par ${\alpha _1}$のReeb Fieldを$${\xi _1} = a\frac{\partial }{{\partial x}} + b\frac{\partial }{{\partial y}} + c\frac{\partial }{{\partial m}}$$とする。任意のベクトル場$Y$に対して、Reeb Field ${\xi _1}$は$$\left\{ \begin{gathered}
+  {\alpha _1}\left( {\xi _1} \right) = 1 \hfill \\
+  \left( {i\left( {{\xi _1}} \right)d{\alpha _1}} \right)\left( Y \right) = 0 \hfill \\ 
+\end{gathered}  \right.$$を満たす。${\alpha _1} = dy - mdx$なので\[d{\alpha _1} = d\left( {dy - mdx} \right) = dx \wedge dm.\]このとき、
+\[\left\{ \begin{gathered}
+  1 = \left( {dy - mdx} \right)\left( {a\frac{\partial }{{\partial x}} + b\frac{\partial }{{\partial y}} + c\frac{\partial }{\partial m}} \right) = \left( {b - ma} \right) \hfill \\
+  0 = \left( {i\left( {a\frac{\partial }{{\partial x}} + b\frac{\partial }{{\partial y}} + c\frac{\partial }{{\partial m}}} \right)\left( {dx \wedge dm} \right)} \right)\left( Y \right) = \left( {adm - cdx} \right)\left( Y \right) \hfill \\ 
+\end{gathered}  \right.\]が成り立つ。よって、\[\left\{ \begin{gathered}
+  b - ma = 1 \hfill \\
+  adm - cdx = 0 \hfill \\ 
+\end{gathered}  \right. \Rightarrow \left\{ \begin{gathered}
+  b = 1 \hfill \\
+  a = c = 0 \hfill \\ 
+\end{gathered}  \right.\]したがって、${\alpha _1} = dy - mdx$のReeb Fieldは\[{\xi _1} = \frac{\partial }{{\partial y}}\]である。
+\end{document}
